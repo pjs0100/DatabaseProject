@@ -1,4 +1,3 @@
-# DatabaseProject
 Priority Queue System
 Author: Patrick Straub
 

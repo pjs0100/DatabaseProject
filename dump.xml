@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="priorityqueue">
+        <table_structure name="appointment_times">
+                <field Field="APPOINTMENT_ID" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+                <field Field="ATTRACTION_ID" Type="int" Null="NO" Key="MUL" Extra="" Comment="" />
+                <field Field="APPOINTMENT_TIME" Type="char(50)" Null="NO" Key="" Extra="" Comment="" />
+                <key Table="appointment_times" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="APPOINTMENT_ID" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <key Table="appointment_times" Non_unique="1" Key_name="ATTRACTION_ID" Seq_in_index="1" Column_name="ATTRACTION_ID" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <options Name="appointment_times" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2021-03-25 21:42:12" Update_time="2021-03-25 21:42:20" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+        </table_structure>
+        <table_data name="appointment_times">
+        <row>
+                <field name="APPOINTMENT_ID">1</field>
+                <field name="ATTRACTION_ID">1</field>
+                <field name="APPOINTMENT_TIME">10:30AM</field>
+        </row>
+        <row>
+                <field name="APPOINTMENT_ID">2</field>
+                <field name="ATTRACTION_ID">1</field>
+                <field name="APPOINTMENT_TIME">10:30AM</field>
+        </row>
+        <row>
+                <field name="APPOINTMENT_ID">3</field>
+                <field name="ATTRACTION_ID">1</field>
+                <field name="APPOINTMENT_TIME">11:30AM</field>
+        </row>
+        <row>
+                <field name="APPOINTMENT_ID">4</field>
+                <field name="ATTRACTION_ID">2</field>
+                <field name="APPOINTMENT_TIME">10:30AM</field>
+        </row>
+        </table_data>
+        <table_structure name="attraction">
+                <field Field="ATTRACTION_ID" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+                <field Field="ATTRACTION_NAME" Type="char(50)" Null="NO" Key="" Extra="" Comment="" />
+                <field Field="AREA_ID" Type="int" Null="NO" Key="MUL" Extra="" Comment="" />
+                <key Table="attraction" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="ATTRACTION_ID" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <key Table="attraction" Non_unique="1" Key_name="AREA_ID" Seq_in_index="1" Column_name="AREA_ID" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <options Name="attraction" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2021-03-25 21:41:58" Update_time="2021-03-25 21:42:05" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+        </table_structure>
+        <table_data name="attraction">
+        <row>
+                <field name="ATTRACTION_ID">1</field>
+                <field name="ATTRACTION_NAME">Space Mountain</field>
+                <field name="AREA_ID">1</field>
+        </row>
+        <row>
+                <field name="ATTRACTION_ID">2</field>
+                <field name="ATTRACTION_NAME">Splash Mountain</field>
+                <field name="AREA_ID">2</field>
+        </row>
+        <row>
+                <field name="ATTRACTION_ID">3</field>
+                <field name="ATTRACTION_NAME">Philharmagic</field>
+                <field name="AREA_ID">3</field>
+        </row>
+        <row>
+                <field name="ATTRACTION_ID">4</field>
+                <field name="ATTRACTION_NAME">T-Rex Encounter</field>
+                <field name="AREA_ID">4</field>
+        </row>
+        </table_data>
+        <table_structure name="guest">
+                <field Field="GUEST_ID" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+                <field Field="NAME" Type="char(50)" Null="NO" Key="" Extra="" Comment="" />
+                <key Table="guest" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="GUEST_ID" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <options Name="guest" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2021-03-25 21:41:22" Update_time="2021-03-25 21:41:39" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+        </table_structure>
+        <table_data name="guest">
+        <row>
+                <field name="GUEST_ID">1</field>
+                <field name="NAME">Diana Prince</field>
+        </row>
+        <row>
+                <field name="GUEST_ID">2</field>
+                <field name="NAME">Clark Kent</field>
+        </row>
+        <row>
+                <field name="GUEST_ID">3</field>
+                <field name="NAME">Frank Castle</field>
+        </row>
+        <row>
+                <field name="GUEST_ID">4</field>
+                <field name="NAME">Carol Danvers</field>
+        </row>
+        </table_data>
+        <table_structure name="guest_appointments">
+                <field Field="GUEST_ID" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+                <field Field="APPOINTMENT_ID" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+                <key Table="guest_appointments" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="APPOINTMENT_ID" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <key Table="guest_appointments" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="GUEST_ID" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <key Table="guest_appointments" Non_unique="1" Key_name="GUEST_ID" Seq_in_index="1" Column_name="GUEST_ID" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <options Name="guest_appointments" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2021-03-25 21:43:14" Update_time="2021-03-25 21:43:22" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+        </table_structure>
+        <table_data name="guest_appointments">
+        <row>
+                <field name="GUEST_ID">1</field>
+                <field name="APPOINTMENT_ID">1</field>
+        </row>
+        <row>
+                <field name="GUEST_ID">1</field>
+                <field name="APPOINTMENT_ID">2</field>
+        </row>
+        <row>
+                <field name="GUEST_ID">2</field>
+                <field name="APPOINTMENT_ID">3</field>
+        </row>
+        <row>
+                <field name="GUEST_ID">3</field>
+                <field name="APPOINTMENT_ID">4</field>
+        </row>
+        </table_data>
+        <table_structure name="park_areas">
+                <field Field="AREA_ID" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+                <field Field="AREA_NAME" Type="char(50)" Null="NO" Key="" Extra="" Comment="" />
+                <key Table="park_areas" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="AREA_ID" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+                <options Name="park_areas" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2021-03-25 21:41:44" Update_time="2021-03-25 21:41:51" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+        </table_structure>
+        <table_data name="park_areas">
+        <row>
+                <field name="AREA_ID">1</field>
+                <field name="AREA_NAME">TomorrowLand</field>
+        </row>
+        <row>
+                <field name="AREA_ID">2</field>
+                <field name="AREA_NAME">FrontierLand</field>
+        </row>
+        <row>
+                <field name="AREA_ID">3</field>
+                <field name="AREA_NAME">FantasyLand</field>
+        </row>
+        <row>
+                <field name="AREA_ID">4</field>
+                <field name="AREA_NAME">Jurassic Park</field>
+        </row>
+        </table_data>
+</database>
+</mysqldump>
